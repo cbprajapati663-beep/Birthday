@@ -130,16 +130,31 @@ footer{padding:40px 24px 34px;line-height:1.8}
  .moment{padding:19px 17px}
  .note{padding:24px 18px}
 }
-.memory-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:28px auto 18px}
-.memory-tab{min-height:46px;padding:12px 16px;font-size:.82rem;background:#ffffff0a;border-color:#f5d69a55;box-shadow:none}
-.memory-tab.active{background:linear-gradient(120deg,#a94370,#69345f);border-color:#ffb6cc}
+.tap-hint{margin:25px auto 14px;color:#ffe3ee;font-size:.88rem;font-weight:600;letter-spacing:.02em;animation:hintPulse 2s ease-in-out infinite}
+.tap-finger{display:inline-block;color:var(--gold);font-size:1.15rem;margin:0 7px;animation:fingerTap 1.15s ease-in-out infinite}
+@keyframes hintPulse{50%{text-shadow:0 0 16px #ff9bbd99;color:#fff}}
+@keyframes fingerTap{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+.memory-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:16px auto 22px;max-width:610px}
+.memory-tab{position:relative;min-height:142px;padding:17px 14px 14px;border-radius:18px;border:1px solid #f5d69a55;background:linear-gradient(145deg,#ffffff12,#ffffff05);box-shadow:0 10px 28px #0003;text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:8px;overflow:hidden}
+.memory-tab:after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at 100% 0%,#ff9bbd25,transparent 55%);pointer-events:none}
+.memory-tab.active{border:1.5px solid #ff9fc9;background:linear-gradient(145deg,#9e426c55,#ffffff0b);box-shadow:0 0 0 2px #ff9bbd20,0 12px 35px #ed76a52a}
+.memory-tab:active{transform:scale(.975)}
+.memory-card-date{font-size:.65rem;letter-spacing:.15em;color:var(--gold);font-weight:600}
+.memory-tab strong{font:500 1.18rem 'Playfair Display',serif;color:#fff2f0;position:relative;z-index:1}
+.memory-card-icon{position:absolute;right:15px;top:28px;color:#ff9fc9;font-size:1.6rem;text-shadow:0 0 16px #ff9bbd99}
+.tap-label{display:flex;gap:7px;align-items:center;margin-top:auto;padding-top:7px;color:#ffdce9;font-size:.62rem;font-weight:700;letter-spacing:.14em;position:relative;z-index:1}
+.tap-label b{font-size:1rem;color:var(--gold)}
+.birthday-memory{background:linear-gradient(145deg,#71304f66,#f5d69a12);border-color:#f5d69a88}
+.birthday-memory .memory-card-icon{color:#ffd48c;text-shadow:0 0 18px #ffd48c99}
+.memory-open-label{text-align:center;color:#f5d69a;font-size:.64rem;letter-spacing:.24em;font-weight:700;margin-bottom:14px}
 .memory-reveal{min-height:230px;text-align:left;animation:memoryIn .45s ease}
 .memory-date{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .memory-reveal h3{font:500 1.65rem 'Playfair Display',serif;color:var(--pink);margin:0 0 13px}
 .memory-reveal p{font-size:1.02rem;line-height:1.95}
 .memory-footnote{font-size:.88rem;margin-top:20px;color:#d7c2ce}
 @keyframes memoryIn{from{opacity:.35;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:430px){.memory-tabs{display:grid;grid-template-columns:1fr;width:100%;max-width:330px}.memory-tab{width:100%}.memory-reveal{padding:25px 20px}}
+@media(max-width:430px){.memory-tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.memory-tab{width:100%;min-height:132px;padding:14px 11px}.memory-tab strong{font-size:1.05rem}.memory-card-date{font-size:.58rem}.tap-label{font-size:.55rem;letter-spacing:.1em}.memory-reveal{padding:25px 20px}}
+@media(max-width:340px){.memory-tabs{grid-template-columns:1fr}.memory-tab{min-height:112px}}
 @media(prefers-reduced-motion:reduce){
  h1{animation:none;transform:none}
  .scroll{animation:none}
@@ -173,16 +188,19 @@ footer{padding:40px 24px 34px;line-height:1.8}
   <div class="section-label">A little time capsule</div>
   <h2 id="memoryTitle">Some days deserve <em style="color:var(--pink)">to be remembered.</em></h2>
   <p class="copy">In teen dates mein se kisi ek ko chuno… shayad ek chhoti si yaad phir se muskura de.</p>
-  <div class="memory-tabs" role="group" aria-label="Choose a memory">
-    <button type="button" class="memory-tab active" data-memory="first">30 Oct · First hello</button>
-    <button type="button" class="memory-tab" data-memory="meeting">5 Nov · First meeting</button>
-    <button type="button" class="memory-tab" data-memory="drive">6 Nov · 126 km</button>
+  <p class="tap-hint"><span class="tap-finger">☟</span> Har memory card par tap karo — ek yaad khulegi <span class="tap-finger">☟</span></p>
+  <div class="memory-tabs" role="group" aria-label="Tap a memory card to open it">
+    <button type="button" class="memory-tab active" data-memory="first" aria-pressed="true"><span class="memory-card-date">30 OCT 2024</span><strong>Our first hello</strong><span class="memory-card-icon">♡</span><span class="tap-label">TAP TO OPEN <b>↗</b></span></button>
+    <button type="button" class="memory-tab" data-memory="meeting" aria-pressed="false"><span class="memory-card-date">5 NOV 2024</span><strong>Our first meeting</strong><span class="memory-card-icon">✦</span><span class="tap-label">TAP TO OPEN <b>↗</b></span></button>
+    <button type="button" class="memory-tab" data-memory="drive" aria-pressed="false"><span class="memory-card-date">6 NOV 2024</span><strong>That 126 km drive</strong><span class="memory-card-icon">➳</span><span class="tap-label">TAP TO OPEN <b>↗</b></span></button>
+    <button type="button" class="memory-tab birthday-memory" data-memory="birthday" aria-pressed="false"><span class="memory-card-date">21 FEB 2025</span><strong>My best birthday</strong><span class="memory-card-icon">♥</span><span class="tap-label">TAP TO OPEN <b>↗</b></span></button>
   </div>
   <div class="note memory-reveal" id="memoryReveal" aria-live="polite">
+    <div class="memory-open-label">♡ MEMORY UNLOCKED ♡</div>
     <div class="memory-date" id="memoryDate">30 October 2024 · 11:10 AM</div>
     <h3 id="memoryHeading">The first hello</h3>
     <p id="memoryText">Kabhi-kabhi ek simple sa “hello” bhi yaadon ki sabse khoobsurat kitaab ka pehla panna ban jaata hai. Shayad us waqt hum dono ko andaaza bhi nahi tha ki yeh chhoti si baat-cheet itni yaad reh jaayegi.</p>
-    <div class="signature">Some moments stay. ♡</div>
+    <div class="signature" id="memorySignature">Some moments stay. ♡</div>
   </div>
   <p class="copy memory-footnote">Yeh yaadein kisi jawab ya vaade ki umeed nahi rakhtin. Bas jo achha tha, uske liye dil se shukriya.</p>
 </section>
@@ -220,9 +238,10 @@ footer{padding:40px 24px 34px;line-height:1.8}
 <script>
 
 const memories={
- first:{date:'30 October 2024 · 11:10 AM',heading:'The first hello',text:'Kabhi-kabhi ek simple sa “hello” bhi yaadon ki sabse khoobsurat kitaab ka pehla panna ban jaata hai. Shayad us waqt hum dono ko andaaza bhi nahi tha ki yeh chhoti si baat-cheet itni yaad reh jaayegi.'},
- meeting:{date:'5 November 2024',heading:'The day we first met',text:'Bhool Bhulaiyaa 3 dekhne ka woh din… film ki kahaani shayad waqt ke saath dhundhli ho jaaye, lekin pehli mulaqat ka ehsaas apni alag jagah rakhta hai. Mere liye us din ki sabse khaas baat tumse milna tha.'},
- drive:{date:'6 November 2024',heading:'126 kilometres, countless little moments',text:'Woh 126 km ka safar sirf ek drive nahi tha. Raaste, baatein, khamoshiyaan aur ek-doosre ko samajhne ki koshish… kabhi-kabhi manzil se zyada yaad safar reh jaata hai.'}
+ first:{date:'30 October 2024 · 11:10 AM',heading:'The first hello',text:'Kabhi-kabhi ek simple sa “hello” bhi zindagi ki sabse pyaari kahaani ka pehla panna ban jaata hai. 11:10 AM par shuru hui woh chhoti si chat… shayad us waqt hum dono ko pata nahi tha ki kuch lafz itni gehri yaad ban sakte hain. Aaj bhi us pehle hello ko yaad karta hoon toh dil mein ek halki si muskurahat aa jaati hai.',signature:'Har khoobsurat kahaani ka ek pehla lafz hota hai. ♡'},
+ meeting:{date:'5 November 2024',heading:'The day I finally met you',text:'Bhool Bhulaiyaa 3 dekhne ka woh din… screen par film chal rahi thi, lekin mere liye sabse khaas baat tumhara saamne hona tha. Pehli mulaqat ka woh halka sa excitement, woh pal, woh saath baithna — kuch yaadein tasveeron mein nahi, seedha dil mein save ho jaati hain.',signature:'Us din ki sabse achhi yaad — tum. ♡'},
+ drive:{date:'6 November 2024',heading:'126 kilometres, closer memories',text:'Woh 126 km ka safar… raaste badalte rahe, baatein hoti rahin, kabhi hansi aur kabhi khamoshi bhi. Shayad us din hum ek-doosre ko aur samajhne ki koshish kar rahe the. Aaj sochta hoon toh lagta hai, kuch safar apni manzil se nahi, unmein saath bitaaye hue lamhon se yaad rehte hain.',signature:'Raasta lamba tha, yaad aaj bhi paas hai. ♡'},
+ birthday:{date:'21 February 2025',heading:'The birthday I will never forget',text:'Mera birthday… aur tumne use jis tarah special banaya, woh aaj bhi mere dil ke sabse kareeb hai. Mere office mein sirf hum dono the. Koi badi party nahi, koi bheed nahi — bas tum, main, aur woh chhote-chhote pal jo mere liye duniya bhar ki khushi se badhkar the. Saath baithkar khana khana, ek-doosre ko apne haathon se khilana, tumhara mere din ko itne pyaar se celebrate karna… shayad tumhare liye woh ek birthday celebration tha, lekin mere liye woh ek aisi yaad ban gayi jise main kabhi khona nahi chahta. Maine birthdays pehle bhi dekhe hain, lekin ab tak ka best birthday wahi tha. Us din mujhe mehsoos hua ki kisi din ko yaadgaar banane ke liye bahut kuch nahi chahiye — kabhi-kabhi bas ek apna insaan ka saath hi kaafi hota hai. Thank you, us din ko itna khoobsurat banane ke liye. Main us yaad ko hamesha muskurakar sambhaal kar rakhunga.',signature:'21.02.2025 — A birthday, a feeling, a forever-favourite memory. ♡'}
 };
 document.querySelectorAll('.memory-tab').forEach(btn=>btn.addEventListener('click',()=>{
  const item=memories[btn.dataset.memory];if(!item)return;
@@ -231,6 +250,8 @@ document.querySelectorAll('.memory-tab').forEach(btn=>btn.addEventListener('clic
  document.getElementById('memoryDate').textContent=item.date;
  document.getElementById('memoryHeading').textContent=item.heading;
  document.getElementById('memoryText').textContent=item.text;
+ document.getElementById('memorySignature').textContent=item.signature;
+ panel.scrollIntoView({behavior:'smooth',block:'nearest'});
 }));
 document.querySelectorAll('.memory-tab').forEach((btn,i)=>btn.setAttribute('aria-pressed',i===0?'true':'false'));
 const letter=document.getElementById('letter');
