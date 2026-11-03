@@ -79,6 +79,62 @@ button:hover:before{left:120%}
 @media(max-width:600px){.hero{min-height:94svh;padding-top:65px}.heart-core{top:-180px;font-size:66px}.orbit{top:-245px;width:210px;height:210px;left:-105px}.orbit.two{top:-270px;width:260px;height:260px;left:-130px}.hero-3d{opacity:.9}.section{padding-top:72px;padding-bottom:72px}.note{padding:27px 22px}}
 @media(hover:none){.moment:hover,.note:not(.letter):hover{transform:none}}
 
+
+/* Mobile-first birthday experience refinement */
+.hero{min-height:100svh;padding:54px 22px 42px}
+.hero-content{width:100%;max-width:520px;margin:0 auto}
+h1{font-size:clamp(3.15rem,12.2vw,5.4rem);line-height:1.02;letter-spacing:-.045em;transform-style:preserve-3d;animation:title3d 1.35s cubic-bezier(.18,.78,.2,1) both;text-shadow:0 2px 0 #d7a0b8,0 5px 0 #9d557d,0 10px 22px #0008,0 0 38px #ff9bbd55}
+h1 em{margin-top:8px;font-size:1.04em;color:#ffabc9;text-shadow:0 2px 0 #c56d96,0 5px 0 #873c68,0 11px 24px #0009,0 0 42px #ff80b877}
+@keyframes title3d{0%{opacity:0;transform:perspective(700px) rotateX(32deg) translateY(35px) scale(.92);filter:blur(7px)}65%{opacity:1;transform:perspective(700px) rotateX(-5deg) translateY(-3px) scale(1.015);filter:blur(0)}100%{transform:perspective(700px) rotateX(0) translateY(0) scale(1)}}
+.eyebrow{font-size:.7rem;letter-spacing:.24em;margin-bottom:20px}
+.subtitle{font-size:1.08rem;line-height:1.85;max-width:34ch;margin:23px auto 0;color:#f1e1e9}
+.scroll{display:inline-flex;flex-direction:column;align-items:center;gap:5px;margin-top:34px;padding:13px 18px 10px;border:1px solid #f5d69a55;border-radius:18px;background:linear-gradient(145deg,#ffffff12,#ffffff04);backdrop-filter:blur(10px);font-size:.9rem;letter-spacing:.015em;text-transform:none;color:#fff0e8;animation:bob 2.5s infinite}
+.scroll strong{font-weight:600}
+.scroll span{font-size:1.55rem;line-height:1;margin-top:2px;color:var(--gold)}
+.scroll small{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#d9b8ca}
+.hero-3d{top:25%}
+.heart-core{top:-108px;left:-34px;width:68px;height:68px;font-size:62px}
+.orbit{top:-158px;left:-90px;width:180px;height:180px}
+.orbit.two{top:-178px;left:-110px;width:220px;height:220px}
+.section{padding:76px 21px}
+.section-label{font-size:.7rem;letter-spacing:.2em}
+h2{font-size:clamp(2.15rem,8.7vw,3.25rem);line-height:1.18}
+.copy{font-size:1.02rem;line-height:1.9}
+.timeline{gap:14px;margin-top:30px}
+.moment{padding:21px 20px;border-radius:20px}
+.moment time{font-size:.68rem;letter-spacing:.12em}
+.moment h3{font-size:1.42rem;line-height:1.25}
+.moment p{font-size:.98rem;line-height:1.85}
+.note{padding:27px 21px;border-radius:22px;margin-top:22px}
+.note p{font-size:1.02rem;line-height:2}
+.poem-card{position:relative;overflow:hidden;background:linear-gradient(145deg,#ffffff12,#ffffff04)}
+.poem-card:before{content:"✦";position:absolute;right:17px;top:8px;color:#f5d69a88;font-size:1.5rem}
+.second-poem{border-color:#ff9bbd40;background:linear-gradient(145deg,#9c47701c,#ffffff05)}
+.second-poem p{font-family:'Playfair Display',serif;font-style:italic}
+.wish{font-size:clamp(2rem,8.2vw,3rem);text-shadow:0 3px 18px #ff9bbd35}
+.wish span{color:#ffabc9}
+button{min-height:52px;padding:16px 25px;font-size:.96rem}
+footer{padding:40px 24px 34px;line-height:1.8}
+@media(min-width:700px){
+ .hero{padding-left:28px;padding-right:28px}
+ .hero-3d{top:29%}
+ .heart-core{top:-155px;left:-48px;width:96px;height:96px;font-size:82px}
+ .orbit{top:-220px;left:-115px;width:230px;height:230px}
+ .orbit.two{top:-245px;left:-140px;width:280px;height:280px}
+ .scroll{font-size:.95rem}
+}
+@media(max-width:380px){
+ h1{font-size:clamp(2.8rem,11.8vw,3.4rem)}
+ .subtitle{font-size:1rem;max-width:31ch}
+ .scroll{font-size:.82rem;padding:12px 13px}
+ .moment{padding:19px 17px}
+ .note{padding:24px 18px}
+}
+@media(prefers-reduced-motion:reduce){
+ h1{animation:none;transform:none}
+ .scroll{animation:none}
+}
+
 </style>
 </head>
 <body>
@@ -90,7 +146,7 @@ button:hover:before{left:120%}
 <div class="eyebrow">A little birthday surprise</div>
 <h1>Happy Birthday<em>Miss Perfect</em></h1>
 <p class="subtitle">Some names become more than names. They become a little feeling, a memory, and a smile that stays. Today, this one is for you. ♡</p>
-<div class="scroll">A few words from the heart<span>↓</span></div>
+<div class="scroll"><strong>A little story, a few words from my heart</strong><span>↓</span><small>Scroll gently</small></div>
 </div>
 </section>
 <section class="section">
@@ -107,8 +163,11 @@ button:hover:before{left:120%}
 <div class="section-label">A small note</div>
 <h2>For my <em style="color:var(--pink)">Miss Perfect</em></h2>
 <p class="copy">Waqt ne hum dono ko shayad alag mod par la khada kiya hai. Kabhi baat hoti hai, kabhi baaton mein anban bhi… magar kuch ehsaas shor nahi karte, bas khamoshi se dil mein apni jagah banaye rakhte hain.</p>
-<div class="note">
+<div class="note poem-card">
 <p>“Kuch raaste adhure rehkar bhi yaadgaar hote hain,<br>kuch log door hokar bhi dil ke paas hote hain.<br>Main har mod par tumhe awaaz nahi deta,<br>bas ek umeed rakhta hoon — kabhi fursat mile,<br>toh hamari baat phir kisi muskurahat se shuru ho.”</p>
+</div>
+<div class="note poem-card second-poem">
+<p>“Tumhari hansi se roshan rahe har subah tumhari,<br>khushiyon se mehakti rahe har shaam tumhari.<br>Jo khwaab dekho, woh haqeeqat ban kar milein,<br>aur zindagi har mod par le aaye muskurahat tumhari.”</p>
 </div>
 <p class="copy" style="margin-top:28px">Main aaj bhi intezaar ke us mod par hoon jahan umeed abhi zinda hai. Bas itni si khwahish hai ki yeh intezaar itna lamba na ho jaaye ki milne ya baat karne ka mauka hi waqt ke haathon guzar jaaye. Phir bhi, tumhari marzi aur tumhara sukoon mere liye zaroori hai. Koi shikayat nahi — sirf ek sachcha ehsaas.</p>
 </section>
@@ -125,7 +184,7 @@ button:hover:before{left:120%}
 </div>
 </section>
 <section class="section" style="padding-top:20px;padding-bottom:100px">
-<div class="wish">Keep shining, Miss Perfect.<br>Happy Birthday! ♡</div>
+<div class="wish">Aaj ka din tumhare naam…<br><span>Keep shining, Miss Perfect.</span><br>Happy Birthday! ♡</div>
 <div class="divider"></div>
 <p class="copy" style="font-size:.9rem">Wishing you a beautiful year ahead — with peace, love, laughter, and all the little things that make life lovely.</p>
 </section>
