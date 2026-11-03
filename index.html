@@ -371,7 +371,7 @@ const stories=document.getElementById('memoryStories');
 ['meeting','drive','daily','birthday'].forEach((key,index)=>{
  const item=memories[key];
  const card=document.createElement('article');
- card.className='memory-story-card reveal'+(key==='birthday'?' birthday-story':'');
+ card.className='memory-story-card'+(key==='birthday'?' birthday-story':'');
  const top=document.createElement('div');top.className='memory-story-top';
  const date=document.createElement('div');date.className='memory-story-date';date.textContent=item.date;
  const number=document.createElement('span');number.className='memory-story-number';number.textContent=String(index+1).padStart(2,'0');
