@@ -206,7 +206,25 @@ footer{padding:40px 24px 34px;line-height:1.8}
 .photo-art span{font-size:.7rem;color:#e2cbd8;margin-top:8px;line-height:1.6}
 .photo-caption{font-size:.78rem;color:#d9c3d1;line-height:1.7;margin:13px 5px 3px}
 @media(max-width:560px){.shayari-grid{grid-template-columns:1fr}.shayari-card{min-height:auto}.little-notes{grid-template-columns:1fr}.little-note{padding:17px}.keepsake-poster{min-height:330px;padding:38px 18px}.photo-art-grid{grid-template-columns:1fr}.photo-art,.photo-art:nth-child(3){grid-column:auto;min-height:145px}}
-\n</style>
+\n
+/* Clear, storybook-style memory cards and first hello */
+.first-hello-section .first-hello-story{max-width:760px;margin:24px auto 0;padding:clamp(24px,5vw,42px);border:1px solid #f5d69a77;border-radius:24px;background:linear-gradient(145deg,#71345e66,#211329cc);box-shadow:0 18px 55px #0005,inset 0 0 45px #ff9bbd0d;text-align:left}
+.first-hello-story .hello-quote{font:italic clamp(1.2rem,4.6vw,1.65rem)/1.65 'Playfair Display',serif;text-align:center;color:#ffe0eb;margin-bottom:22px}
+.first-hello-story p{font-size:clamp(.96rem,2.5vw,1.06rem);line-height:1.95;color:#f2e4ec;margin:0 0 17px}
+.first-hello-story .hello-verse{font:italic clamp(1.05rem,3.5vw,1.25rem)/1.9 'Playfair Display',serif;text-align:center;color:var(--gold);padding:18px 8px;border-top:1px solid #f5d69a35;border-bottom:1px solid #f5d69a35}
+.first-hello-story .meet-closing{font:italic 1.05rem/1.8 'Playfair Display',serif;text-align:center;color:var(--pink);margin-top:18px}
+.memory-tabs{grid-template-columns:1fr;max-width:650px;gap:16px;margin-top:24px}
+.memory-tab{min-height:154px;padding:20px 22px;border-radius:22px;border:1px solid #ffb5d488;background:linear-gradient(110deg,#572642dd,#25152fcc 72%);box-shadow:0 12px 34px #0005,inset 0 0 32px #ff9bbd12;gap:9px}
+.memory-tab:before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:linear-gradient(#ffd99a,#ff83b8);opacity:.9}
+.memory-tab strong{font-size:clamp(1.25rem,4vw,1.5rem);padding-right:42px}
+.memory-card-subtitle{font-size:.82rem;color:#e9cbd9;letter-spacing:.02em;position:relative;z-index:1}
+.memory-card-date{font-size:.7rem}
+.memory-tab .tap-label{font-size:.7rem;letter-spacing:.12em;color:#ffe4ee;border:1px solid #f5d69a66;border-radius:999px;padding:9px 13px;margin-top:9px;background:#ffffff0b}
+.memory-card-icon{font-size:1.8rem;top:25px;right:22px}
+.memory-tab.active{transform:translateY(-2px);border-color:#ffd28b;box-shadow:0 0 0 2px #ff9bbd22,0 14px 40px #ed76a544}
+@media(min-width:650px){.memory-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.memory-tab{min-height:170px}}
+
+</style>
 </head>
 <body>
 <main>
@@ -220,25 +238,28 @@ footer{padding:40px 24px 34px;line-height:1.8}
 <div class="scroll"><strong>A little story, a few words from my heart</strong><span>↓</span><small>Scroll gently</small></div>
 </div>
 </section>
-<section class="section">
-<div class="section-label">A day kept close to the heart</div>
-<h2>And then, <em style="color:var(--pink)">we finally met.</em></h2>
-<p class="copy">5 November 2024 · Bhool Bhulaiyaa 3</p>
-<div class="timeline">
-<div class="moment first-meet-story"><time>5 NOVEMBER 2024</time><h3>Woh pehli mulaqat… ♡</h3><p>“Kuch mulaqatein bas ek din ki nahi hoti,<br>woh yaadon mein umr bhar ke liye jagah bana leti hain.”</p><p>Bhool Bhulaiyaa 3 ka woh din… pehli baar saamne baithna, ek hi pal ko saath mehsoos karna. Screen par kahaani chal rahi thi, magar mere liye us din ki sabse khoobsurat kahaani tum thi. Shayad us waqt samajh nahi aaya tha ki yeh chhota sa din itni pyaari yaad ban kar dil mein reh jayega.</p><p class="meet-closing">Film khatam ho gayi… par woh pehli mulaqat aaj bhi yaadon mein chalti rehti hai. ♡</p></div>
+<section class="section first-hello-section">
+<div class="section-label">30 October 2024 · 11:10 AM</div>
+<h2><em style="color:var(--pink)">The first hello…</em></h2>
+<div class="moment first-hello-story">
+<div class="hello-quote">“Ek chhota sa hello tha, par shayad usmein<br>ek khoobsurat kahaani chhupi thi…”</div>
+<p>Yahin se hamari baat shuru hui thi. 30 October ki woh 11:10 AM… ek simple si chat, kuch seedhe-saadhe lafz, aur phir dheere-dheere baaton mein ek apnapan sa ghulne laga.</p>
+<p>Us waqt kahan pata tha ki roz ke un chhote messages mein itni saari yaadein chhup jaayengi. Kabhi ek reply ka intezaar, kabhi bina kisi khaas wajah ke muskurana… aur kabhi bas yun hi baat karte rehna.</p>
+<p class="hello-verse">Na koi vaada tha, na kahaani ka pata,<br>bas ek hello se silsila shuru hua.<br>Kuch lafz dil ke itne kareeb aa gaye,<br>ki ek chhota sa pal bhi yaad ban gaya. ♡</p>
+<div class="meet-closing">Har kahaani ka ek pehla panna hota hai… hamara pehla hello tha. ♡</div>
 </div>
 </section>
 <section class="section memory-section" aria-labelledby="memoryTitle">
   <div class="section-label">A little time capsule</div>
   <h2 id="memoryTitle">Some days deserve <em style="color:var(--pink)">to be remembered.</em></h2>
-  <p class="copy">Har card mein ek alag yaad chhupi hai. Kisi bhi card ko chuno — poori kahaani ek popup mein khulegi. ♡</p>
-  <p class="tap-hint"><span class="tap-finger">☟</span> Kisi bhi memory card par tap karo — poori yaad popup mein padho <span class="tap-finger">☟</span></p>
+  <p class="copy">Har card ek alag yaad ka darwaza hai. Tap karoge toh us din ki poori kahaani ek khoobsurat popup mein khulegi. ♡</p>
+  <p class="tap-hint"><span class="tap-finger">☟</span> Kisi bhi card par TAP TO OPEN dabao — poori yaad popup mein padho <span class="tap-finger">☟</span></p>
   <div class="memory-tabs" role="group" aria-label="Tap a memory card to open it">
-    <button type="button" class="memory-tab active" data-memory="first" aria-pressed="true"><span class="memory-card-date">30 OCT 2024</span><strong>Our first hello</strong><span class="memory-card-icon">♡</span><span class="tap-label">TAP TO OPEN <b>↗</b></span></button>
-    <button type="button" class="memory-tab" data-memory="meeting" aria-pressed="false"><span class="memory-card-date">5 NOV 2024</span><strong>Our first meeting</strong><span class="memory-card-icon">✦</span><span class="tap-label">TAP TO OPEN <b>↗</b></span></button>
-    <button type="button" class="memory-tab" data-memory="drive" aria-pressed="false"><span class="memory-card-date">6 NOV 2024</span><strong>Our first long drive</strong><span class="memory-card-icon">➳</span><span class="tap-label">TAP TO OPEN <b>↗</b></span></button>
-    <button type="button" class="memory-tab daily-memory" data-memory="daily" aria-pressed="false"><span class="memory-card-date">OUR OFFICE DAYS</span><strong>Our everyday little ritual</strong><span class="memory-card-icon">♡</span><span class="tap-label">TAP TO OPEN <b>↗</b></span></button>
-    <button type="button" class="memory-tab birthday-memory" data-memory="birthday" aria-pressed="false"><span class="memory-card-date">21 FEB 2025</span><strong>My best birthday</strong><span class="memory-card-icon">♥</span><span class="tap-label">TAP TO OPEN <b>↗</b></span></button>
+    <button type="button" class="memory-tab active" data-memory="first" aria-pressed="true"><span class="memory-card-date">30 OCT 2024</span><strong>Our first hello</strong><span class="memory-card-subtitle">30 October · The beginning of our story</span><span class="memory-card-icon">♡</span><span class="tap-label">TAP TO OPEN STORY <b>↗</b></span></button>
+    <button type="button" class="memory-tab" data-memory="meeting" aria-pressed="false"><span class="memory-card-date">5 NOV 2024</span><strong>Our first meeting</strong><span class="memory-card-subtitle">5 November · Bhool Bhulaiyaa 3</span><span class="memory-card-icon">✦</span><span class="tap-label">TAP TO OPEN <b>↗</b></span></button>
+    <button type="button" class="memory-tab" data-memory="drive" aria-pressed="false"><span class="memory-card-date">6 NOV 2024</span><strong>Our first long drive</strong><span class="memory-card-subtitle">6 November · 126 km together</span><span class="memory-card-icon">➳</span><span class="tap-label">TAP TO OPEN <b>↗</b></span></button>
+    <button type="button" class="memory-tab daily-memory" data-memory="daily" aria-pressed="false"><span class="memory-card-date">OUR OFFICE DAYS</span><strong>Our everyday little ritual</strong><span class="memory-card-subtitle">Office days · The little moments</span><span class="memory-card-icon">♡</span><span class="tap-label">TAP TO OPEN <b>↗</b></span></button>
+    <button type="button" class="memory-tab birthday-memory" data-memory="birthday" aria-pressed="false"><span class="memory-card-date">21 FEB 2025</span><strong>My best birthday</strong><span class="memory-card-subtitle">21 February 2025 · A day to remember</span><span class="memory-card-icon">♥</span><span class="tap-label">TAP TO OPEN <b>↗</b></span></button>
   </div>
   <div class="memory-modal" id="memoryModal" aria-hidden="true">
     <div class="memory-modal-backdrop" data-close-memory></div>
@@ -324,7 +345,7 @@ footer{padding:40px 24px 34px;line-height:1.8}
 
 const memories={
  first:{date:'30 October 2024 · 11:10 AM',heading:'The first hello',text:'Kabhi-kabhi ek simple sa “hello” bhi zindagi ki sabse pyaari kahaani ka pehla panna ban jaata hai. 11:10 AM par shuru hui woh chhoti si chat… shayad us waqt hum dono ko pata nahi tha ki kuch lafz itni gehri yaad ban sakte hain. Aaj bhi us pehle hello ko yaad karta hoon toh dil mein ek halki si muskurahat aa jaati hai.',signature:'Har khoobsurat kahaani ka ek pehla lafz hota hai. ♡'},
- meeting:{date:'5 November 2024',heading:'The day I finally met you',text:'Bhool Bhulaiyaa 3 dekhne ka woh din… screen par film chal rahi thi, lekin mere liye sabse khaas baat tumhara saamne hona tha. Pehli mulaqat ka woh halka sa excitement, woh pal, woh saath baithna — kuch yaadein tasveeron mein nahi, seedha dil mein save ho jaati hain.',signature:'Us din ki sabse achhi yaad — tum. ♡'},
+ meeting:{date:'5 November 2024 · Bhool Bhulaiyaa 3',heading:'Woh pehli mulaqat… ♡',text:'Kuch mulaqatein pehli baar mein hi yaadon ka hissa ban jaati hain. 5 November 2024 ka woh din — jab pehli baar saamne baithkar waqt guzara, aur Bhool Bhulaiyaa 3 dekhne ka plan ek khaas yaad ban gaya.\n\nScreen par kahaani chal rahi thi, lekin mere liye us din ka sabse khoobsurat hissa tumhara saamne hona tha. Shayad us pal hum dono ko andaza bhi nahi tha ki ek simple si mulaqat waqt ke saath itni pyaari memory ban kar reh jaayegi.\n\nPehli mulaqat ka woh naya-pan, woh chhoti si khushi, aur saath bitaaya hua waqt — kuch pal dobara nahi aate, bas dil mein apni jagah bana lete hain.\n\nKahaani film ki thi, yaad meri ban gayi;\nwoh pehli mulaqat dil ke kareeb reh gayi. ♡',signature:'Film khatam ho gayi… par woh pehla din yaadon mein reh gaya. ♡'},
  drive:{date:'6 November 2024',heading:'Our first long drive · 126 km',text:'Yeh hamari pehli long drive thi — 126 kilometre ka woh safar, jo apne aap mein ek alag hi yaad ban gaya. Pehli baar itna lamba raasta saath tay karna, us safar ka naya-pan, aur yeh baat ki hum dono us experience ka hissa the. Kabhi-kabhi pehli baar ki hui chhoti ya badi cheezein waqt ke saath aur bhi khaas lagne lagti hain. Mere liye hamari yeh first long drive unhi yaadon mein se ek hai.',signature:'Our first long drive. 126 km, one special memory. ♡'},
  daily:{date:'Those everyday office moments',heading:'The little ritual I still remember',text:'Office ke woh roz ke din… jab hum saath baithkar khana khate the, ek-doosre ko apne haathon se khilate the, aur ek simple sa meal bhi apna sa lagne lagta tha. Shayad us waqt yeh sab hamari daily routine ka hissa tha, isliye humne kabhi socha bhi nahi hoga ki ek din yehi chhoti-chhoti aadatein itni khaas yaad ban jaayengi. Na koi special occasion, na koi celebration — bas roz ka woh saath, woh care, aur woh apnapan. Aaj samajh aata hai ki kabhi-kabhi zindagi ki sabse pyaari memories kisi bade din par nahi, balki aam dinon ke un chhote palon mein chhupi hoti hain. Mere liye woh office ke meals sirf khana nahi the; woh din ka ek aisa hissa the jiska intezaar rehta tha.',signature:'Ordinary days. Unordinary memories. ♡'},
  birthday:{date:'21 February 2025',heading:'The birthday you made unforgettable',text:'21 February 2025… mera birthday. Tumne mere office mein, jab wahan sirf hum dono the, jis pyaar aur apnepan se mera din celebrate kiya, woh mere liye bahut hi khaas ban gaya. Us din ki har chhoti baat mere dil mein ek alag jagah rakhti hai — tumhara mere liye waqt nikalna, mere birthday ko special banana, aur us pal ko itna yaadgaar bana dena. Office ke roz ke saath bitaaye hue din apni jagah khoobsurat the, lekin us birthday par tumne un yaadon ke beech ek aisa din jod diya jo aaj bhi sabse alag chamakta hai. Maine birthdays pehle bhi manaye hain, lekin ab tak ka best birthday wahi raha. Shayad isi liye 21 February mere liye sirf ek date nahi — ek aisi yaad hai jise main hamesha gratitude aur muskurahat ke saath sambhaal kar rakhunga. Thank you for making that day so special.',signature:'21.02.2025 — My favourite birthday memory. ♡'}
